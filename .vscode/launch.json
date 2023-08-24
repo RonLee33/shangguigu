@@ -1,0 +1,79 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "ClassCastTest",
+            "request": "launch",
+            "mainClass": "chapter07.ClassCastTest",
+            "projectName": "shangguigu_b7e27b35"
+        },
+        {
+            "type": "java",
+            "name": "EqualsTest",
+            "request": "launch",
+            "mainClass": "chapter07.EqualsTest",
+            "projectName": "shangguigu_b7e27b35"
+        },
+        {
+            "type": "java",
+            "name": "EnumDemo",
+            "request": "launch",
+            "mainClass": "chapter08.EnumDemo",
+            "projectName": "shangguigu_b7e27b35"
+        },
+        {
+            "type": "java",
+            "name": "LeafTest",
+            "request": "launch",
+            "mainClass": "chapter08.LeafTest",
+            "projectName": "shangguigu_b7e27b35"
+        },
+        {
+            "type": "java",
+            "name": "Son",
+            "request": "launch",
+            "mainClass": "chapter08.Son",
+            "projectName": "shangguigu_b7e27b35"
+        },
+        {
+            "type": "java",
+            "name": "StaticTest",
+            "request": "launch",
+            "mainClass": "chapter08.StaticTest",
+            "projectName": "shangguigu_b7e27b35"
+        },
+        {
+            "type": "java",
+            "name": "Test04",
+            "request": "launch",
+            "mainClass": "chapter08.Test04",
+            "projectName": "shangguigu_b7e27b35"
+        },
+        {
+            "type": "java",
+            "name": "WrapperExer",
+            "request": "launch",
+            "mainClass": "chapter08.WrapperExer",
+            "projectName": "shangguigu_b7e27b35"
+        },
+        {
+            "type": "java",
+            "name": "DivisionDemo",
+            "request": "launch",
+            "mainClass": "chapter09.DivisionDemo",
+            "args": "2 0",
+            "projectName": "shangguigu_b7e27b35"
+        }
+    ]
+}
