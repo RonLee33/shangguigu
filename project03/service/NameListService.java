@@ -27,6 +27,13 @@ public class NameListService {
     private Employee[] employees = new Employee[Data.EMPLOYEES.length];
 
     public NameListService(){
+        
+        getEmployeeInfoList();
+        
+        allowEquipment();
+    }
+
+    private void getEmployeeInfoList(){
         for(int i = 0; i < Data.EMPLOYEES.length; i++){
             String[] employeePro = Data.EMPLOYEES[i];
             switch (Integer.parseInt(employeePro[0])) {
@@ -66,8 +73,6 @@ public class NameListService {
                     break;
             }
         }
-
-        allowEquipment();
     }
 
     private void allowEquipment(){
