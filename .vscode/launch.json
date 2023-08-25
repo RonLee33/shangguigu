@@ -4,7 +4,13 @@
     // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-
+        {
+            "type": "java",
+            "name": "NameListService",
+            "request": "launch",
+            "mainClass": "project03.service.NameListService",
+            "projectName": "shangguigu_b7e27b35"
+        },
         {
             "type": "java",
             "name": "Current File",
