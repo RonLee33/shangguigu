@@ -6,7 +6,6 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.After;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import project03.domain.Designer;
@@ -33,8 +32,12 @@ public class TestTeamService {
         // 添加两名程序员
         String message = null;
         try {
-            teamService.addMember(new Programmer());
-            teamService.addMember(new Programmer());
+            Programmer programmer = new Programmer();
+            programmer.setId(1);
+            teamService.addMember(programmer);
+            programmer = new Programmer();
+            programmer.setId(2);
+            teamService.addMember(programmer);
         } catch (TeamException e){
             message = e.getMessage();
         } finally {
@@ -47,9 +50,15 @@ public class TestTeamService {
         // 添加三名程序员
         String message = null;
         try {
-            teamService.addMember(new Programmer());
-            teamService.addMember(new Programmer());
-            teamService.addMember(new Programmer());
+            Programmer programmer = new Programmer();
+            programmer.setId(1);
+            teamService.addMember(programmer);
+            programmer = new Programmer();
+            programmer.setId(2);
+            teamService.addMember(programmer);
+            programmer = new Programmer();
+            programmer.setId(3);
+            teamService.addMember(programmer);
         } catch (TeamException e){
             message = e.getMessage();
         } finally {
@@ -62,10 +71,18 @@ public class TestTeamService {
         // 添加四名程序员，添加成员可能会失败的情况6
         String message = null;
         try {
-            teamService.addMember(new Programmer());
-            teamService.addMember(new Programmer());
-            teamService.addMember(new Programmer());
-            teamService.addMember(new Programmer());
+            Programmer programmer = new Programmer();
+            programmer.setId(1);
+            teamService.addMember(programmer);
+            programmer = new Programmer();
+            programmer.setId(2);
+            teamService.addMember(programmer);
+            programmer = new Programmer();
+            programmer.setId(3);
+            teamService.addMember(programmer);
+            programmer = new Programmer();
+            programmer.setId(4);
+            teamService.addMember(programmer);
         } catch (TeamException e){
             message = e.getMessage();
         } finally {
@@ -79,9 +96,15 @@ public class TestTeamService {
         // 添加三名设计师，添加成员可能会失败的情况5
         String message = null;
         try {
-            teamService.addMember(new Designer());
-            teamService.addMember(new Designer());
-            teamService.addMember(new Designer());
+            Designer designer = new Designer();
+            designer.setId(1);
+            teamService.addMember(designer);
+            designer = new Designer();
+            designer.setId(2);
+            teamService.addMember(designer);
+            designer = new Designer();
+            designer.setId(3);
+            teamService.addMember(designer);
         } catch (TeamException e){
             message = e.getMessage();
         } finally {
