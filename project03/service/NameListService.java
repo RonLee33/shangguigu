@@ -17,7 +17,14 @@ public class NameListService {
             System.out.println(employee);
         }
 
-        System.out.println("id为3的员工为：" + nameListService.getEmployee(3));
+        try {
+            System.out.println("id为3的员工为：" + nameListService.getEmployee(3));
+            System.out.println("id为13的员工为：" + nameListService.getEmployee(13));
+        } catch (TeamException e) {
+            // TODO: handle exception
+            e.printStackTrace();
+        }
+        
     }
 
     private Employee[] employees = new Employee[Data.EMPLOYEES.length];
@@ -102,8 +109,14 @@ public class NameListService {
         return employees;
     }
 
-    public Employee getEmployee(int id){
-        return employees[id - 1];
+    public Employee getEmployee(int id) throws TeamException{
+        // 找不到指定id员工时抛出异常
+        for (int i = 0; i < employees.length; i++){
+            if (employees[i].getId() == id){
+                return  employees[i];
+            }
+        }
+        throw new TeamException("找不到id=" + id + "的员工");
     }
 
 }
