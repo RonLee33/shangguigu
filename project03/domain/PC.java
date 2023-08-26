@@ -30,7 +30,7 @@ public class PC implements Equipment{
 
     @Override
     public String getDescription () {
-        return "PC [model=" + model + ", display=" + display + "]";
+        return model + "(" + display + ")";
     }
     
     

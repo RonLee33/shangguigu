@@ -48,9 +48,14 @@ public class Employee {
         this.salary = salary;
     }
 
+    protected String getEmployeeInfo(){
+        String info = String.format("%d\t%s\t%d\t%.1f", id, name, age, salary);
+        return info;
+    }
+
     @Override
     public String toString() {
-        return "Employee [id=" + id + ", name=" + name + ", age=" + age + ", salary=" + salary + "]";
+        return getEmployeeInfo();
     }
     
     

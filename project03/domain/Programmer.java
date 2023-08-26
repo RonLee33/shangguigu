@@ -40,5 +40,9 @@ public class Programmer extends Employee{
         this.equipment = equipment;
     }
 
+    public String toString(){
+        return getEmployeeInfo() + "\t程序员\t" + status + "            \t" + equipment.getDescription();
+    }
+
     
 }

@@ -14,11 +14,7 @@ public class NameListService {
         NameListService nameListService = new NameListService();
         Employee[] employees = nameListService.getAllEmployees();
         for (Employee employee : employees) {
-            System.out.print(employee);
-            if (employee instanceof Programmer){
-                System.out.print(", 领用的设备为" + ((Programmer)employee).getEquipment().getDescription());
-            }
-            System.out.print("\n");
+            System.out.println(employee);
         }
 
         System.out.println("id为3的员工为：" + nameListService.getEmployee(3));

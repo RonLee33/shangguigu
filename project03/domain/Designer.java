@@ -21,5 +21,10 @@ public class Designer extends Programmer{
         this.bonus = bonus;
     }
 
+    @Override
+    public String toString(){
+        return getEmployeeInfo() + "\t设计师\t" + getStatus() + "\t" + bonus + "      \t" + getEquipment().getDescription();
+    }
+
     
 }
