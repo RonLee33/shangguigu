@@ -10,22 +10,6 @@ import project03.domain.Programmer;
 import project03.view.Data;
 
 public class NameListService {
-    public static void main(String[] args) {
-        NameListService nameListService = new NameListService();
-        Employee[] employees = nameListService.getAllEmployees();
-        for (Employee employee : employees) {
-            System.out.println(employee);
-        }
-
-        try {
-            System.out.println("id为3的员工为：" + nameListService.getEmployee(3));
-            System.out.println("id为13的员工为：" + nameListService.getEmployee(13));
-        } catch (TeamException e) {
-            // TODO: handle exception
-            e.printStackTrace();
-        }
-        
-    }
 
     private Employee[] employees = new Employee[Data.EMPLOYEES.length];
 
