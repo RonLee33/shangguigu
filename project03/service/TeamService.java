@@ -38,13 +38,13 @@ public class TeamService {
                 } else if (isInTeamById(employee.getId())){
                     // 3.该成员已在本开发团队中
                     throw new TeamException("该成员已在本开发团队中");
-                } else if (developersNumber[2] > 1 && tmp instanceof Architect) {
+                } else if (developersNumber[2] == 1 && tmp instanceof Architect) {
                     // 4.团队中至多只能有一名架构师
                     throw new TeamException("团队中至多只能有一名架构师");
-                } else if (developersNumber[1] > 2 && tmp instanceof Designer) {
+                } else if (developersNumber[1] == 2 && tmp instanceof Designer) {
                     // 5.团队中至多只能有两名设计师
                     throw new TeamException("团队中至多只能有两名设计师");
-                } else if (developersNumber[0] > 3) {
+                } else if (developersNumber[0] == 3) {
                     // 6.团队中至多只能有三名程序员
                     throw new TeamException("团队中至多只能有三名程序员");
                 } else {
@@ -59,7 +59,6 @@ public class TeamService {
                 throw new TeamException("该成员不是开发人员，无法添加");
             }
         }
-        throw new TeamException("添加失败的其他原因");
     }
 
     private int[] getDevelopersNumber(){
@@ -70,7 +69,7 @@ public class TeamService {
                 nums[Data.ARCHITECT - Data.PROGRAMMER] += 1; // 统计架构师数量
             } else if (programmer instanceof Designer) {
                 nums[Data.DESIGNER - Data.PROGRAMMER] += 1; // 统计设计师数量
-            } else {
+            } else if (programmer != null) {
                 nums[Data.PROGRAMMER - Data.PROGRAMMER] += 1; // 统计程序员数量
             }
         }
