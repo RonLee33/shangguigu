@@ -29,7 +29,7 @@ public class TeamService {
                 Programmer tmp = (Programmer)employee;
                 
                 int[] developersNumber = getDevelopersNumber();
-                if (tmp.getStatus() == Status.BUSY){
+                if (tmp.getStatus() == Status.BUSY ){
                     // 1.该成员已是某团队成员
                     throw new TeamException("该成员已是某团队成员");
                 } else if (tmp.getStatus() == Status.VOCATION){
@@ -39,13 +39,13 @@ public class TeamService {
                     // 3.该成员已在本开发团队中
                     throw new TeamException("该成员已在本开发团队中");
                 } else if (developersNumber[2] == 1 && tmp instanceof Architect) {
-                    // 4.团队中至多只能有一名架构师
+                    // 4.团队中至多只能有一名架构师-
                     throw new TeamException("团队中至多只能有一名架构师");
                 } else if (developersNumber[1] == 2 && tmp instanceof Designer) {
-                    // 5.团队中至多只能有两名设计师
+                    // 5.团队中至多只能有两名设计师-
                     throw new TeamException("团队中至多只能有两名设计师");
                 } else if (developersNumber[0] == 3) {
-                    // 6.团队中至多只能有三名程序员
+                    // 6.团队中至多只能有三名程序员-
                     throw new TeamException("团队中至多只能有三名程序员");
                 } else {
                     // 可以成功添加的
@@ -87,17 +87,27 @@ public class TeamService {
     }
 
     public void removeMember(int memberId) throws TeamException{
+        boolean isFound = false;
         for (int i = 0; i < total; i++){
             if (team[i].getMemberId() == memberId){
                 team[i].setStatus(Status.FREE);
                 total -= 1;
                 team[i] = null;
+                isFound = true;
                 for (int j = i; j < total - 1; j++){
                     team[j] = team[j + 1];
                 }
             }
         }
-        throw new TeamException("找不到指定memberId=" + memberId +"的员工");
+
+        // 对找到与否做判断
+        if (isFound) {
+            // 找到了要删除的员工
+            return;
+        } else {
+            // 未找到了要删除的员工
+            throw new TeamException("找不到指定memberId=" + memberId +"的员工");
+        }
     }
 
     public int getCount() {
