@@ -74,7 +74,7 @@ public class TestTeamService {
             designer.setId(5);
             teamService.addMember(designer);
 
-            // 满员后再天机一名设计师
+            // 满员后再添加一名设计师
             designer = new Designer();
             designer.setId(6);
             teamService.addMember(designer);
@@ -86,6 +86,32 @@ public class TestTeamService {
                 "成员已满，无法添加",
                 "成员已满，无法添加",
                 message);
+        }
+    }
+
+    @Test
+    public void testAddMemberAfterTwoDesignerThenArchitect(){
+        // 添加两个设计师添加架构师
+        String message = null;
+        try {
+            // 添加两名设计师
+            Designer designer = new Designer();
+            designer.setId(1);
+            teamService.addMember(designer);
+
+            designer = new Designer();
+            designer.setId(2);
+            teamService.addMember(designer);
+
+            // 添加一名架构师
+            Architect architect = new Architect();
+            architect.setId(3);
+            teamService.addMember(architect);
+        } catch (TeamException e){
+            message = e.getMessage();
+            e.printStackTrace();
+        } finally {
+            assertNull(message);
         }
     }
     

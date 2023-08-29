@@ -42,11 +42,25 @@ public class TeamService {
                     // 4.团队中至多只能有一名架构师-
                     throw new TeamException("团队中至多只能有一名架构师");
                 } else if (developersNumber[1] == 2 && tmp instanceof Designer) {
-                    // 5.团队中至多只能有两名设计师-
-                    throw new TeamException("团队中至多只能有两名设计师");
+                    if (tmp instanceof Architect) {
+                        // 解决添加两个设计师后就无法添加架构师的bug
+                        tmp.setMemberId(++count);
+                        tmp.setStatus(Status.BUSY);
+                        team[total++] = tmp;
+                    } else {
+                        // 5.团队中至多只能有两名设计师-
+                        throw new TeamException("团队中至多只能有两名设计师");
+                    }
                 } else if (developersNumber[0] == 3) {
-                    // 6.团队中至多只能有三名程序员-
-                    throw new TeamException("团队中至多只能有三名程序员");
+                    // 解决添加三个程序员后就无法添加任何队员的bug
+                    if (tmp instanceof Architect || tmp instanceof Designer){
+                        tmp.setMemberId(++count);
+                        tmp.setStatus(Status.BUSY);
+                        team[total++] = tmp;
+                    } else {
+                        // 6.团队中至多只能有三名程序员-
+                        throw new TeamException("团队中至多只能有三名程序员");
+                    }
                 } else {
                     // 可以成功添加的
                     //这里要设置成已有成员中memberID的最大值(即count)加一
