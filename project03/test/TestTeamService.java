@@ -10,6 +10,7 @@ import org.junit.Test;
 
 import project03.domain.Architect;
 import project03.domain.Designer;
+import project03.domain.Employee;
 import project03.domain.Programmer;
 import project03.service.Status;
 import project03.service.TeamException;
@@ -27,6 +28,65 @@ public class TestTeamService {
     @After
     public void teardown(){
         teamService = null;
+    }
+
+    @Test
+    public void testAddMemberAEmployee(){
+        // 添加非程序员
+        String message = null;
+        try {
+            Employee employee = new Employee();
+            employee.setId(1);
+            teamService.addMember(employee);
+        } catch (TeamException e){
+            message = e.getMessage();
+        } finally {
+            assertEquals(
+                "该成员不是开发人员，无法添加",
+                "该成员不是开发人员，无法添加",
+                message);
+        }
+    }
+
+    @Test
+    public void testAddMemberGtFive(){
+        // 团队满员（5）时再加成员
+        String message = null;
+        try {
+            // 添加三名程序员
+            Programmer programmer = new Programmer();
+            programmer.setId(1);
+            teamService.addMember(programmer);
+            programmer = new Programmer();
+            programmer.setId(2);
+            teamService.addMember(programmer);
+            programmer = new Programmer();
+            programmer.setId(3);
+            teamService.addMember(programmer);
+
+            // 添加一名架构师
+            Architect architect = new Architect();
+            architect.setId(4);
+            teamService.addMember(architect);
+
+            // 添加一名设计师
+            Designer designer = new Designer();
+            designer.setId(5);
+            teamService.addMember(designer);
+
+            // 满员后再天机一名设计师
+            designer = new Designer();
+            designer.setId(6);
+            teamService.addMember(designer);
+        } catch (TeamException e){
+            message = e.getMessage();
+            e.printStackTrace();
+        } finally {
+            assertEquals(
+                "成员已满，无法添加",
+                "成员已满，无法添加",
+                message);
+        }
     }
     
     @Test
