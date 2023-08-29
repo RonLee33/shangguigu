@@ -11,6 +11,7 @@ import org.junit.Test;
 import project03.domain.Architect;
 import project03.domain.Designer;
 import project03.domain.Programmer;
+import project03.service.Status;
 import project03.service.TeamException;
 import project03.service.TeamService;
 
@@ -177,6 +178,27 @@ public class TestTeamService {
             assertEquals(
                 "该成员已是某团队成员",
                 "该成员已是某团队成员",
+                message);
+        }
+    }
+
+    @Test
+    public void testAddMemberOnVocation(){
+        // 添加正在度假的员工,情况2
+        String message = null;
+        try {
+            Designer designer = new Designer();
+            designer.setId(1);
+            // 度假的员工
+            designer.setStatus(Status.VOCATION);
+            teamService.addMember(designer);
+
+        } catch (TeamException e){
+            message = e.getMessage();
+        } finally {
+            assertEquals(
+                "该成员正在休假，无法添加",
+                "该成员正在休假，无法添加",
                 message);
         }
     }
