@@ -29,15 +29,15 @@ public class TeamService {
                 Programmer tmp = (Programmer)employee;
                 
                 int[] developersNumber = getDevelopersNumber();
-                if (tmp.getStatus() == Status.BUSY ){
-                    // 1.该成员已是某团队成员
-                    throw new TeamException("该成员已是某团队成员");
+                if (isInTeamById(employee.getId())){
+                    // 3.该成员已在本开发团队中
+                    throw new TeamException("该成员已在本开发团队中");
                 } else if (tmp.getStatus() == Status.VOCATION){
                     // 2.该成员正在休假，无法添加
                     throw new TeamException("该成员正在休假，无法添加");
-                } else if (isInTeamById(employee.getId())){
-                    // 3.该成员已在本开发团队中
-                    throw new TeamException("该成员已在本开发团队中");
+                } else if (tmp.getStatus() == Status.BUSY){
+                    // 1.该成员已是某团队成员
+                    throw new TeamException("该成员已是某团队成员");
                 } else if (developersNumber[2] == 1 && tmp instanceof Architect) {
                     // 4.团队中至多只能有一名架构师-
                     throw new TeamException("团队中至多只能有一名架构师");
