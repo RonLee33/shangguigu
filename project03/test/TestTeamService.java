@@ -8,6 +8,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import project03.domain.Architect;
 import project03.domain.Designer;
 import project03.domain.Programmer;
 import project03.service.TeamException;
@@ -111,6 +112,71 @@ public class TestTeamService {
             assertEquals(
                 "不应能添加三名设计师",
                 "团队中至多只能有两名设计师",
+                message);
+        }
+    }
+
+    @Test
+    public void testAddMemberTwoArchitect(){
+        // 添加两名架构师，添加成员可能会失败的情况4
+        String message = null;
+        try {
+            Architect architect = new Architect();
+            architect.setId(1);
+            teamService.addMember(architect);
+            architect = new Architect();
+            architect.setId(2);
+            teamService.addMember(architect);
+        } catch (TeamException e){
+            message = e.getMessage();
+        } finally {
+            assertEquals(
+                "不应能添加三名设计师",
+                "团队中至多只能有一名架构师",
+                message);
+        }
+    }
+
+    @Test
+    public void testAddMemberExistedMember(){
+        // 添加已在当前团队的成员，情况3
+        String message = null;
+        try {
+            Designer designer = new Designer();
+            designer.setId(1);
+            teamService.addMember(designer);
+            // 重复添加
+            teamService.addMember(designer);
+
+        } catch (TeamException e){
+            message = e.getMessage();
+        } finally {
+            assertEquals(
+                "该成员已在本开发团队中",
+                "该成员已在本开发团队中",
+                message);
+        }
+    }
+
+    @Test
+    public void testAddMemberJoinAnother(){
+        // 添加已加入其他团队的成员,情况1
+        String message = null;
+        try {
+            Designer designer = new Designer();
+            designer.setId(1);
+
+            TeamService anotherTeam = new TeamService();
+            anotherTeam.addMember(designer);
+            // 添加已加入其他团队的成员
+            teamService.addMember(designer);
+
+        } catch (TeamException e){
+            message = e.getMessage();
+        } finally {
+            assertEquals(
+                "该成员已是某团队成员",
+                "该成员已是某团队成员",
                 message);
         }
     }
