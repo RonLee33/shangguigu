@@ -238,6 +238,9 @@ public class TestTeamService {
                 message,
                 1,
                 teamService.getTotal() + teamService.getCount());
+
+            // 增加异常校验
+            assertNull("不应异常", message);
         }
     }
 
