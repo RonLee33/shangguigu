@@ -7,7 +7,7 @@ import project03.domain.Programmer;
 import project03.view.Data;
 
 public class TeamService {
-    private int count = 1;
+    private int count = 0;// 修改只加一个员工时count=2的bug
     private final int MAX_MEMBER = 5;
     private Programmer[] team = new Programmer[MAX_MEMBER];
     private int total = 0;
@@ -49,8 +49,8 @@ public class TeamService {
                     throw new TeamException("团队中至多只能有三名程序员");
                 } else {
                     // 可以成功添加的
-                    //这里要设置成已有成员中memberID的最大值加一，找最大值的逻辑后面再补
-                    tmp.setMemberId(count++);
+                    //这里要设置成已有成员中memberID的最大值(即count)加一
+                    tmp.setMemberId(++count);// 修改只加一个员工时count=2的bug
                     tmp.setStatus(Status.BUSY);
                     team[total++] = tmp;
                 }
