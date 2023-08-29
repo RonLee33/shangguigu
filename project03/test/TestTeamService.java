@@ -236,8 +236,8 @@ public class TestTeamService {
         } finally {
             assertEquals(
                 message,
-                0,
-                teamService.getTotal());
+                1,
+                teamService.getTotal() + teamService.getCount());
         }
     }
 
