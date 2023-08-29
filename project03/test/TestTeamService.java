@@ -203,4 +203,42 @@ public class TestTeamService {
         }
     }
 
+    @Test
+    public void testRemoveMemberNotInTeam(){
+        // 删除不在团队的员工
+        String message = null;
+        int memberId = 5;
+        try {
+            teamService.removeMember(memberId);
+
+        } catch (TeamException e){
+            message = e.getMessage();
+        } finally {
+            assertEquals(
+                "找不到指定memberId=" + memberId +"的员工",
+                "找不到指定memberId=" + memberId +"的员工",
+                message);
+        }
+    }
+
+    @Test
+    public void testRemoveMemberInTeam(){
+        // 删除在团队的员工
+        String message = null;
+        int memberId = 1;
+        try {
+            Designer designer = new Designer();
+            designer.setId(1);
+            teamService.addMember(designer);
+            teamService.removeMember(memberId);
+        } catch (TeamException e){
+            message = e.getMessage();
+        } finally {
+            assertEquals(
+                message,
+                0,
+                teamService.getTotal());
+        }
+    }
+
 }
