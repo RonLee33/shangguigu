@@ -48,7 +48,7 @@ public class Employee {
         this.salary = salary;
     }
 
-    protected String getEmployeeInfo(){
+    public String getEmployeeInfo(){
         String info = String.format("%d\t%s\t%d\t%.1f", id, name, age, salary);
         return info;
     }
