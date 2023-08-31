@@ -10,7 +10,7 @@ public class TeamService {
     private int count = 0;// 修改只加一个员工时count=2的bug
     private final int MAX_MEMBER = 5;
     private Programmer[] team = new Programmer[MAX_MEMBER];
-    private int total = 0;
+    private int total = 0;// 一方面统计团队有多少人，另一方面也可以认为是指向队尾“空元素”的“指针”
 
     public TeamService(){
 
@@ -106,9 +106,11 @@ public class TeamService {
                 team[i].setStatus(Status.FREE);
                 total -= 1;
                 team[i] = null;
-                for (int j = i; j < total - 1; j++){
+                for (int j = i; j < total; j++){
+                    // j < total - 1 改为 j < total的原因是第107行total有减一，不会发生数据越界的情况
                     team[j] = team[j + 1];
                 }
+                team[total] = null; // 把最后一位成员前移后，删除其在原来的位置
                 return;
             }
         }
