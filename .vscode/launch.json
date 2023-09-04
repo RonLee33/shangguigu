@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ThreadTest",
+            "request": "launch",
+            "mainClass": "chapter10.ThreadTest",
+            "projectName": "shangguigu_b7e27b35"
+        },
+        {
+            "type": "java",
             "name": "TeamView",
             "request": "launch",
             "mainClass": "project03.view.TeamView",
