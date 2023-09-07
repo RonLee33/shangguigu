@@ -16,7 +16,7 @@ import java.util.Vector;
 */
 public class WrapperExer {
     public static void main(String[] args) {
-        Vector grades = new Vector();
+        Vector<Double> grades = new Vector<>();
         Scanner scanner = new Scanner(System.in);
         Double grade = scanner.nextDouble();
         while (grade >= 0) {
