@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "SyncBlockClass",
+            "request": "launch",
+            "mainClass": "chapter10.SyncBlockClass",
+            "projectName": "shangguigu_b7e27b35"
+        },
+        {
+            "type": "java",
+            "name": "SyncBlockThis",
+            "request": "launch",
+            "mainClass": "chapter10.SyncBlockThis",
+            "projectName": "shangguigu_b7e27b35"
+        },
+        {
+            "type": "java",
             "name": "ThreadTest",
             "request": "launch",
             "mainClass": "chapter10.ThreadTest",
