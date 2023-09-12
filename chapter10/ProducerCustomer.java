@@ -15,13 +15,13 @@ public class ProducerCustomer {
     public static void main(String[] args) {
         Clerk clerk = new Clerk();
         Productor productor = new Productor(clerk);
-        Customer customer = new Customer(clerk);
+        Customer customerA = new Customer(clerk);
 
         productor.setName("生产者");
-        customer.setName("消费者");
+        customerA.setName("消费者 A");
 
         productor.start();
-        customer.start();
+        customerA.start();
     }
 }
 
@@ -30,14 +30,10 @@ class Clerk{
     
     public synchronized void addProduct(){
 
-        if (productNum <= 20) {
-            try {
-                Thread.sleep(100);
-            } catch (InterruptedException e){
-                e.printStackTrace();
-            }
+        if (productNum < 20) {
             productNum++;
             System.out.println(Thread.currentThread().getName() + "生产了第" + productNum + "个产品");
+            notifyAll(); //生产一次就唤醒一次消费者
         } else {
             try {
                 wait();
@@ -45,20 +41,15 @@ class Clerk{
                 e.printStackTrace();
             }
         }
-        notifyAll();
         
     }
 
     public synchronized void subProduct(){
 
         if (productNum > 0) {
-            try {
-                Thread.sleep(100);
-            } catch (InterruptedException e){
-                e.printStackTrace();
-            }
             System.out.println(Thread.currentThread().getName() + "消费了第" + productNum + "个产品");
             productNum--;
+            notifyAll(); // 消费一个就唤醒一次生产者
         } else {
             try {
                 wait();
@@ -66,8 +57,6 @@ class Clerk{
                 e.printStackTrace();
             }
         }
-        notifyAll();
-
     }
 }
 
@@ -81,6 +70,11 @@ class Productor extends Thread{
     @Override
     public void run(){
         while (true) {
+            try {
+                Thread.sleep(50);
+            } catch (InterruptedException e){
+                e.printStackTrace();
+            }
             clerk.addProduct();
         }
     }
@@ -96,6 +90,11 @@ class Customer extends Thread{
     @Override
     public void run(){
         while (true) {
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e){
+                e.printStackTrace();
+            }
             clerk.subProduct();
         }
     }
