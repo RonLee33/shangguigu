@@ -16,12 +16,15 @@ public class ProducerCustomer {
         Clerk clerk = new Clerk();
         Productor productor = new Productor(clerk);
         Customer customerA = new Customer(clerk);
+        Customer customerB = new Customer(clerk);
 
         productor.setName("生产者");
         customerA.setName("消费者 A");
+        customerB.setName("消费者 B");
 
         productor.start();
         customerA.start();
+        customerB.start();
     }
 }
 
