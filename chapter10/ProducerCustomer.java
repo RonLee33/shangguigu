@@ -74,7 +74,7 @@ class Productor extends Thread{
     public void run(){
         while (true) {
             try {
-                Thread.sleep(50);
+                Thread.sleep(50); // 延时操作应放在run()中，模拟线程实际业务的耗时操作
             } catch (InterruptedException e){
                 e.printStackTrace();
             }
