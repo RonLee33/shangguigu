@@ -11,7 +11,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 
 public class ThreadPoolDemo {
     public static void main(String[] args) {
-        // TODO 线程安全的懒汉式实现，之后要补充
+        
         ExecutorService service = Executors.newFixedThreadPool(10);
         ThreadPoolExecutor service1 = (ThreadPoolExecutor) service;
 
