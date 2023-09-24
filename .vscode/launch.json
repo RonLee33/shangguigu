@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CalenderExer",
+            "request": "launch",
+            "mainClass": "chapter10.CalenderExer",
+            "projectName": "shangguigu_b7e27b35"
+        },
+        {
+            "type": "java",
+            "name": "CalendarDemo",
+            "request": "launch",
+            "mainClass": "chapter10.CalendarDemo",
+            "projectName": "shangguigu_b7e27b35"
+        },
+        {
+            "type": "java",
+            "name": "SDFDemo",
+            "request": "launch",
+            "mainClass": "chapter10.SDFDemo",
+            "projectName": "shangguigu_b7e27b35"
+        },
+        {
+            "type": "java",
             "name": "DeadLock",
             "request": "launch",
             "mainClass": "chapter10.DeadLock",
