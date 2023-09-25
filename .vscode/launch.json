@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "DTFDemo",
+            "request": "launch",
+            "mainClass": "chapter11.newtime.DTFDemo",
+            "projectName": "shangguigu_b7e27b35"
+        },
+        {
+            "type": "java",
             "name": "SDFDemo",
             "request": "launch",
             "mainClass": "chapter11.SDFDemo",
