@@ -1,6 +1,6 @@
 package chapter11.comparepack;
 
-public class Person {
+public class Person implements Comparable{
     private String name;
     private int age;
 
@@ -8,6 +8,21 @@ public class Person {
         this.name = name;
         this.age = age;
     }
+
+    
+
+    @Override
+    public int compareTo(Object o) {
+        // 按年龄升序排序
+        if (o instanceof Person){
+            Person other = (Person) o;
+            return Integer.compare(age, other.getAge());
+        }
+
+        throw new RuntimeException("o 不是Person的子类，无法比较");
+    }
+
+
 
     public String getName() {
         return name;

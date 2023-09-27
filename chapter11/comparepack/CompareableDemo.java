@@ -25,10 +25,10 @@ public class CompareableDemo{
             new Person("Sophia Evans", 31)
         };
 
-        // java.lang.ClassCastException: class chapter11.comparepack.Person cannot be cast to class java.lang.Comparable
         Arrays.sort(persons);
 
         for (Person person : persons) {
+            // 按年龄升序排序输出
             System.out.println(person);
         }
     }
