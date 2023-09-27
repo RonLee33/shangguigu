@@ -1,6 +1,7 @@
 package chapter11.comparepack;
 
 public class Person implements Comparable<Object>{
+    // Comparable 自然排序
     private String name;
     private int age;
 
@@ -10,7 +11,6 @@ public class Person implements Comparable<Object>{
     }
 
     
-
     @Override
     public int compareTo(Object o) {
         // 按年龄升序排序

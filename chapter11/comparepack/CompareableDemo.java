@@ -1,6 +1,7 @@
 package chapter11.comparepack;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 public class CompareableDemo{
     public static void main(String[] args) {
@@ -29,6 +30,30 @@ public class CompareableDemo{
 
         for (Person person : persons) {
             // 按年龄升序排序输出
+            System.out.println(person);
+        }
+
+        System.out.println("以下按姓名升序排序：");
+
+        Arrays.sort(persons, new Comparator<Object>() {
+            // Comparator， 定制排序
+            @Override
+            public int compare(Object o1, Object o2) {
+                if (o1 instanceof Person && o2 instanceof Person){
+                    // 按姓名升序排序
+                    Person p1 = (Person) o1;
+                    Person p2 = (Person) o2;
+
+                    int result = p1.getName().compareTo(p2.getName());
+                    return result;
+                }
+
+                throw new RuntimeException("入参之一 不是Person的子类，无法比较");
+            }
+        });
+
+        for (Person person : persons) {
+            // 按姓名升序排序输出,即 Comparator会覆盖掉 Person从Comparable中重写的compareTo方法中的比较准则
             System.out.println(person);
         }
     }
