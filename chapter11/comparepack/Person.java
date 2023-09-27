@@ -1,6 +1,6 @@
 package chapter11.comparepack;
 
-public class Person implements Comparable{
+public class Person implements Comparable<Object>{
     private String name;
     private int age;
 
