@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ListExer",
+            "request": "launch",
+            "mainClass": "chapter12.node04.ListExer",
+            "projectName": "shangguigu_b7e27b35"
+        },
+        {
+            "type": "java",
+            "name": "CollectionAddDemo",
+            "request": "launch",
+            "mainClass": "chapter12.node02.CollectionAddDemo",
+            "projectName": "shangguigu_b7e27b35"
+        },
+        {
+            "type": "java",
             "name": "CompareableDemo",
             "request": "launch",
             "mainClass": "chapter11.comparepack.CompareableDemo",
