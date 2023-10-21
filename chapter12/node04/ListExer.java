@@ -8,6 +8,7 @@ public class ListExer {
     public static void main(String[] args) {
         registerInfo();
         statisticsChar();
+        testListRemove();
     }
 
     private static void registerInfo(){
@@ -70,6 +71,14 @@ public class ListExer {
         }
     }
 
+    private static void testListRemove(){
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.remove(2);
+        System.out.println(list);
+    }
     
 }
 
