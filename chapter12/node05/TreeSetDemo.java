@@ -1,6 +1,7 @@
 package chapter12.node05;
 
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -39,6 +40,18 @@ public class TreeSetDemo {
         System.out.println("pollLast(): " + treeSet.pollLast()); // 返回并删除treeSet中的最后一个元素
 
         System.out.println("New tree Set: " + treeSet);
+
+        // TreeSet的迭代遍历,迭代器方式
+        Iterator<String> iterator = treeSet.iterator();
+
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
+        
+        // TreeSet的迭代遍历,foreach方式
+        for (String string : treeSet) {
+            System.out.println(string);
+        }
 
     }
 }
