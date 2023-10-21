@@ -1,5 +1,6 @@
 package chapter12.node05;
 
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.TreeSet;
 
@@ -8,7 +9,7 @@ import java.util.TreeSet;
  * */
 public class CustomSortingDemo {
     public static void main(String[] args) {
-        TreeSet<User> set = new TreeSet<User>();
+        HashSet<User> set = new HashSet<User>();
 
         set.add(new User("Tom",12));
         set.add(new User("Rose",23));
@@ -18,7 +19,6 @@ public class CustomSortingDemo {
         set.add(new User("Jim",23));
         set.add(new User("Maria",18));
         set.add(new User("Jack",23));
-        //set.add("Tom");
 
         Iterator<User> iterator = set.iterator();
         while(iterator.hasNext()){
@@ -26,6 +26,15 @@ public class CustomSortingDemo {
         }
 
         System.out.println(set.contains(new User(8, "Jack", 23))); //true
+
+        System.out.println("set中的元素排序后：");
+        TreeSet<User> treeSet = new TreeSet<User>(set);
+        Iterator<User> iterator1 = treeSet.iterator();
+        while(iterator1.hasNext()){
+            System.out.println(iterator1.next());
+        }
+
+        
     }
 }
 
