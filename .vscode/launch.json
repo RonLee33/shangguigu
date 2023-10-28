@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "PropertiesDemo",
+            "request": "launch",
+            "mainClass": "chapter12.node06.PropertiesDemo",
+            "projectName": "shangguigu_b7e27b35"
+        },
+        {
+            "type": "java",
             "name": "TreeMapDemo",
             "request": "launch",
             "mainClass": "chapter12.node06.TreeMapDemo",
