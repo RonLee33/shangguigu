@@ -30,13 +30,13 @@ public class MapDemo {
         map2.put("WangWu", 19);
         System.out.println("map2与map是否相等：" + map.equals(map2));
 
-        Set<String> keySet = map.keySet();
+        Set<String> keySet = map.keySet(); // 键是唯一的、不重复的，所以类型是Set
         System.out.println("Map成员姓名如下：");
         for (String key : keySet) {
             System.out.println(key);
         }
 
-        Collection<Integer> valueSet = map.values();
+        Collection<Integer> valueSet = map.values(); // 值可重复，所以类型是Collection
         System.out.println("Map成员年龄如下：");
         for (int age : valueSet) {
             System.out.println(age);
