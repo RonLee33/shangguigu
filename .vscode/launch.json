@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "MapDemo",
+            "request": "launch",
+            "mainClass": "chapter12.node06.MapDemo",
+            "projectName": "shangguigu_b7e27b35"
+        },
+        {
+            "type": "java",
             "name": "CustomSortingDemo",
             "request": "launch",
             "mainClass": "chapter12.node05.CustomSortingDemo",
