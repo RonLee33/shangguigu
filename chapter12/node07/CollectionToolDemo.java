@@ -87,7 +87,7 @@ public class CollectionToolDemo {
         
         // 将指定的元素加入到list中
         Collections.addAll(list, 333, 334, 335, 336, 337, 338, 339, 340);
-        System.out.println("list=" + list);
+        System.out.println("Collections.addAll()后，list=" + list);
 
     }
 }

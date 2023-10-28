@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "PointSorted",
+            "request": "launch",
+            "mainClass": "chapter12.node07.PointSorted",
+            "projectName": "shangguigu_b7e27b35"
+        },
+        {
+            "type": "java",
             "name": "CollectionToolDemo",
             "request": "launch",
             "mainClass": "chapter12.node07.CollectionToolDemo",
