@@ -1,0 +1,62 @@
+package chapter12.node07;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashSet;
+
+public class CollectionToolDemo {
+    public static void main(String[] args) {
+        // 生成测试用的List
+        ArrayList<Integer> list = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            list.add(i);
+        }
+        
+        // 1.排序操作
+        Collections.reverse(list);
+        System.out.println("执行reverse(List)反序后: " + list);
+
+        Collections.shuffle(list);
+        System.out.println("执行shuffle(list)乱序后: " + list);
+
+        Collections.sort(list);
+        System.out.println("执行sort(list)升序排序后: " + list);
+
+        Collections.sort(list, new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                return -o1.compareTo(o2);
+            } 
+        });
+        System.out.println("执行sort(list, Comparator)降序排序后: " + list);
+
+        Collections.swap(list, 1, 3);
+        System.out.println("执行swap(list, 1, 3)后: " + list);
+
+        // 2.查找 
+        System.out.println("max(list)得到最大值：" + Collections.max(list)); // min()类似，略去举例
+        
+        // 二分查找
+        Collections.sort(list);
+        System.out.println("binarySearch(list, 5): " + Collections.binarySearch(list, 5));
+
+        // 查找指定元素在集合中出现的次数
+        int j;
+        for (int i = 0; i < 10; i++){
+            j = (int) (Math.random() * 10);
+            list.add(j);
+        }
+        System.out.println("list: " + list);
+
+        System.out.println("查找指定元素在集合中出现的次数: ");
+        HashSet<Integer> set = new HashSet<>(list);
+        for (Integer integer : set) {
+            System.out.println(integer + "出现 " + Collections.frequency(list, integer) + "次");
+        }
+
+        // 3.复制替换
+        
+
+    }
+}
