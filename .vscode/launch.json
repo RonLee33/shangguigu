@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "WildCareDemo2",
+            "request": "launch",
+            "mainClass": "chapter13.WildCareDemo2",
+            "projectName": "shangguigu_b7e27b35"
+        },
+        {
+            "type": "java",
+            "name": "GenericMethodDemo",
+            "request": "launch",
+            "mainClass": "chapter13.GenericMethodDemo",
+            "projectName": "shangguigu_b7e27b35"
+        },
+        {
+            "type": "java",
+            "name": "GenericDemoTest",
+            "request": "launch",
+            "mainClass": "chapter13.GenericDemoTest",
+            "projectName": "shangguigu_b7e27b35"
+        },
+        {
+            "type": "java",
             "name": "PointSorted",
             "request": "launch",
             "mainClass": "chapter12.node07.PointSorted",
