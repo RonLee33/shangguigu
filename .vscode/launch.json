@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "TestIntegerMatrix",
+            "request": "launch",
+            "mainClass": "chapter13.genericexer.TestIntegerMatrix",
+            "projectName": "shangguigu_b7e27b35"
+        },
+        {
+            "type": "java",
             "name": "WildCareDemo3",
             "request": "launch",
             "mainClass": "chapter13.WildCareDemo3",
