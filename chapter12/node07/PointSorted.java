@@ -37,7 +37,7 @@ public class PointSorted {
         for (Point point : list) {
             System.out.println(point);
         }
-    }
+    }   
 }
 
 class Point implements Comparable<Point>{
