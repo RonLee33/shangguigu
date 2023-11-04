@@ -1,0 +1,5 @@
+a
+writechar
+write
+writechar
+char
