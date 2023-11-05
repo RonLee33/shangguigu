@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "OrderExer",
+            "request": "launch",
+            "mainClass": "chapter15.node07.OrderExer",
+            "projectName": "shangguigu_b7e27b35"
+        },
+        {
+            "type": "java",
             "name": "ObjStreamDemo",
             "request": "launch",
             "mainClass": "chapter15.node07.ObjStreamDemo",
