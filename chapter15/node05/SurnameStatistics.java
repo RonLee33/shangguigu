@@ -36,7 +36,7 @@ public class SurnameStatistics {
             String line;
             int count;
             while ((line = bufferedReader.readLine()) != null) {
-                System.out.println(line);
+                // System.out.println(line);
                 surname = line.charAt(0);
                 if (map.containsKey(surname)){
                     count = map.get(surname);

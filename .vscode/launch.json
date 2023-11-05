@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "TransferStreamDemo",
+            "request": "launch",
+            "mainClass": "chapter15.node06.TransferStreamDemo",
+            "projectName": "shangguigu_b7e27b35"
+        },
+        {
+            "type": "java",
             "name": "SurnameStatistics",
             "request": "launch",
             "mainClass": "chapter15.node05.SurnameStatistics",
