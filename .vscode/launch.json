@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CopyFile",
+            "request": "launch",
+            "mainClass": "chapter15.node04.CopyFile",
+            "projectName": "shangguigu_b7e27b35"
+        },
+        {
+            "type": "java",
+            "name": "FileStreamDemo",
+            "request": "launch",
+            "mainClass": "chapter15.node04.FileStreamDemo",
+            "projectName": "shangguigu_b7e27b35"
+        },
+        {
+            "type": "java",
             "name": "FileReaderWriterDemo",
             "request": "launch",
             "mainClass": "chapter15.node03.FileReaderWriterDemo",
