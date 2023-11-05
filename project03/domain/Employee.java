@@ -1,10 +1,13 @@
 package project03.domain;
 
-public class Employee {
+import java.io.Serializable;
+
+public class Employee implements Serializable{
+    static final long serialVersionUID = 27182834234L;
     private int id;
     private String name;
     private int age;
-    private double salary;
+    private double salary;//transient ,加此关键字的属性不会被序列化，在反序列化时，读出的是对应数据类型的默认值，如int型是零
  
     public Employee() {
     }
