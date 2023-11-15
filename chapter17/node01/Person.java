@@ -1,8 +1,9 @@
 package chapter17.node01;
 
-public class Person {
+public class Person extends Creature<Person> implements Comparable<Person>{
     private String name;
-    public int age;
+    public int age = 1;
+    private static boolean isGood = true;
 
     public Person(){
         System.out.println("Person()...");
@@ -29,5 +30,12 @@ public class Person {
     public String toString() {
         return "Person [name=" + name + ", age=" + age + "]";
     }
+
+    @Override
+    public int compareTo(Person o) {
+        return 0;
+    }
+
+    
 
 }

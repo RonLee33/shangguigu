@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "NewInstanceDemo",
+            "request": "launch",
+            "mainClass": "chapter17.node04.NewInstanceDemo",
+            "projectName": "shangguigu_b7e27b35"
+        },
+        {
+            "type": "java",
             "name": "ClassDemo",
             "request": "launch",
             "mainClass": "chapter17.node02.ClassDemo",
