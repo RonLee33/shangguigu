@@ -1,6 +1,6 @@
 package chapter17.node01;
 
-public class Person extends Creature<Person> implements Comparable<Person>{
+public class Person extends Creature<String> implements Comparable<Person>, MyInterface<Person>{
     private String name;
     public int age = 1;
     private static boolean isGood = true;
@@ -37,6 +37,11 @@ public class Person extends Creature<Person> implements Comparable<Person>{
         return 0;
     }
 
-    
+    @Override
+    public boolean areYouAdult(Person t) {
+        return t.age >= 18;
+    }
+
+        
 
 }

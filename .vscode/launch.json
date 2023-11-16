@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ReflectionGetParent",
+            "request": "launch",
+            "mainClass": "chapter17.node04.ReflectionGetParent",
+            "projectName": "shangguigu_b7e27b35"
+        },
+        {
+            "type": "java",
             "name": "NewInstanceDemo",
             "request": "launch",
             "mainClass": "chapter17.node04.NewInstanceDemo",
