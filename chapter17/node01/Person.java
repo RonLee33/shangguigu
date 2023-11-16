@@ -18,10 +18,11 @@ public class Person extends Creature<Person> implements Comparable<Person>{
         this.age = age;
     }
 
-    public void show() {
+    public void show() throws RuntimeException{
         System.out.println("你好，我是一个Person()");
     }
 
+    @MyAnnotation(value="show_nation")
     private String showNation(String nation){
         return "我的国籍是：" + nation;
     }

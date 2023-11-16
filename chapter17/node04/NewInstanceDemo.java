@@ -1,15 +1,24 @@
 package chapter17.node04;
 
+import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 
 import chapter17.node01.Person;
+
+/** 本节主要获取运行时对象的完整内部信息之本身，
+ * 主要是对象所属类 本身  的属性、方法，
+ * 不涉及其父类、父接口、包信息的获取 
+ * */
 
 public class NewInstanceDemo {
     public static void main(String[] args) throws InstantiationException, IllegalAccessException{
         // demo1();
         // demo2();
-        demo3();
+        // demo3();
+        // demo4();
+        demo5();
     }
 
     public static void demo1() throws InstantiationException, IllegalAccessException{
@@ -25,7 +34,7 @@ public class NewInstanceDemo {
 
     public static void demo2(){
         /** 获取运行时类的内部结构1：
-         * 获取所有属性、所有方法、所有构造器
+         * 获取所有属性
          */
         Class<Person> clazz = Person.class;
 
@@ -44,7 +53,7 @@ public class NewInstanceDemo {
     }
 
     public static void demo3(){
-        /** 获取属性的权限信息 */
+        /** 获取属性的权限信息、数据类型、属性名 */
         Class<Person> clazz = Person.class;
         Field[] fields = clazz.getDeclaredFields();
         for (Field field : fields) {
@@ -68,5 +77,76 @@ public class NewInstanceDemo {
             String fieldName = field.getName();
             System.out.println(fieldName);
         }
+    }
+
+    public static void demo4(){
+        // 获取运行时对象的方法
+
+        Class<Person> clazz = Person.class;
+        // getMethods()：获取运行时类本身及其所有父类中声明为public权限的方法
+        Method[] methods = clazz.getMethods();
+        for (Method method : methods) {
+            System.out.println(method);
+        }
+
+        System.out.println("--------------getDeclaredMethods()：获取运行时类本身所有的方法-----------------");
+        // getDeclaredMethods()：获取运行时类本身声明所有的方法(即便没有对应的权限也会获取),但不包括其父类的属性
+        Method[] methods2 = clazz.getDeclaredMethods();
+        for (Method method : methods2) {
+            System.out.println(method);
+        }
+    }
+
+    public static void demo5(){
+        // 获取运行时类的方法、注解相关的详细信息
+
+        Class<Person> clazz = Person.class;
+        Method[] methods = clazz.getDeclaredMethods();
+        for (Method method : methods) {
+            // 1.获取方法声明的注解，方法可能被多个注解修饰，故此次用复数形式获取所有注解并打印
+            Annotation[] annotations = method.getAnnotations();
+            for (Annotation annotation : annotations) {
+                System.out.println(annotation);
+            }
+
+            // 2.权限修饰符
+            System.out.print(Modifier.toString(method.getModifiers()) + "\t");
+
+            // 3.返回值类型
+            System.out.print(method.getReturnType().getName() + "\t");
+
+            // 4.方法名
+            System.out.print(method.getName() + "(");
+
+            // 5.形参列表
+            Class<?>[] parameterTypes = method.getParameterTypes();
+            if (!(parameterTypes == null && parameterTypes.length == 0)) {
+                for (int i = 0; i < parameterTypes.length; i++) {
+                    if (i == parameterTypes.length - 1) {
+                        System.out.print(parameterTypes[i].getName() + " args_" + i);
+                        break;
+                    }
+
+                    System.out.println(parameterTypes[i].getName() + "args_" + i + ",");
+                }
+            }
+            System.out.print(")");
+
+            // 6.抛出异常
+            Class<?>[] exceptionTypes = method.getExceptionTypes();
+            if (exceptionTypes.length > 0){
+                System.out.print(" throws ");
+                for (int i = 0; i < exceptionTypes.length; i++) {
+                    if (i == exceptionTypes.length - 1) {
+                        System.out.print(exceptionTypes[i].getName());
+                        break;
+                    }
+                    System.out.print(exceptionTypes[i].getName() + ",");
+                }
+            }
+
+            System.out.println();
+        }
+
     }
 }
