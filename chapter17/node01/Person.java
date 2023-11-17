@@ -3,7 +3,7 @@ package chapter17.node01;
 public class Person extends Creature<String> implements Comparable<Person>, MyInterface<Person>{
     private String name;
     public int age = 1;
-    private static boolean isGood = true;
+    private static String description = "nothing";
 
     public Person(){
         System.out.println("Person()...");
@@ -23,8 +23,8 @@ public class Person extends Creature<String> implements Comparable<Person>, MyIn
     }
 
     @MyAnnotation(value="show_nation")
-    private String showNation(String nation){
-        return "我的国籍是：" + nation;
+    private String showNation(String nation, int age){
+        return "我的国籍是：" + nation + "，年龄是：" + age;
     }
 
     @Override
