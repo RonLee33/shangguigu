@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "AnnotionUseDemoByReflection",
+            "request": "launch",
+            "mainClass": "chapter17.node05.AnnotionUseDemoByReflection",
+            "projectName": "shangguigu_b7e27b35"
+        },
+        {
+            "type": "java",
             "name": "ReflectionInvokeDemo",
             "request": "launch",
             "mainClass": "chapter17.node04.ReflectionInvokeDemo",
