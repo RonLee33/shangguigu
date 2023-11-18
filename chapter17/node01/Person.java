@@ -6,7 +6,7 @@ public class Person extends Creature<String> implements Comparable<Person>, MyIn
     private static String description = "nothing";
 
     public Person(){
-        System.out.println("Person()...");
+        System.out.println("第17章中的chapter17.node01.Person()实例化中...");
     }
 
     public Person(int age) {
@@ -18,8 +18,9 @@ public class Person extends Creature<String> implements Comparable<Person>, MyIn
         this.age = age;
     }
 
-    public void show() throws RuntimeException{
+    public String show() throws RuntimeException{
         System.out.println("你好，我是一个Person()");
+        return "你好，我是一个Person()";
     }
 
     @MyAnnotation(value="show_nation")

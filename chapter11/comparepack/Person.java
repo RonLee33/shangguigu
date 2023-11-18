@@ -5,6 +5,10 @@ public class Person implements Comparable<Object>{
     private String name;
     private int age;
 
+    private Person(){
+        System.out.println("第11章中的chapter11.comparepack.Person()实例化中...");
+    }
+
     public Person(String name, int age){
         this.name = name;
         this.age = age;
