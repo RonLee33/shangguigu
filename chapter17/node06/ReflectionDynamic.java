@@ -7,17 +7,20 @@ import chapter17.node01.Person;
 
 public class ReflectionDynamic {
     public static void main(String[] args) throws Exception{
-        // System.out.println(getStaticInstanct("chapter17.node01.Person"));
-        // System.out.println(getStaticInstanct("chapter11.comparepack.Person"));
 
-        // System.out.println("*****************************************");
+        System.out.println("举例一的验证：根据输入动态地生成实例，生成的实例是动态变化的");
+        System.out.println(getStaticInstanct("chapter17.node01.Person"));
+        System.out.println(getStaticInstanct("chapter11.comparepack.Person"));
 
-        // Object obj = ReflectionDynamic.getDynamicInstanct("chapter17.node01.Person");
-        // System.out.println(obj);
+        System.out.println("*****************************************");
 
-        // obj = ReflectionDynamic.getDynamicInstanct("chapter11.comparepack.Person");
-        // System.out.println(obj);
+        Object obj = ReflectionDynamic.getDynamicInstanct("chapter17.node01.Person");
+        System.out.println(obj);
 
+        obj = ReflectionDynamic.getDynamicInstanct("chapter11.comparepack.Person");
+        System.out.println(obj);
+
+        System.out.println("举例二的验证：根据输入动态地生成实例，并调用动态方法，返回动态结果，生成的实例是动态变化的");
         dynamicInvokeTest();
     }
 
