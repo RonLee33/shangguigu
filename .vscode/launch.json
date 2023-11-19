@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "MethodQuote",
+            "request": "launch",
+            "mainClass": "chapter18.node02.MethodQuote",
+            "projectName": "shangguigu_b7e27b35"
+        },
+        {
+            "type": "java",
             "name": "LambdaDemo",
             "request": "launch",
             "mainClass": "chapter18.node01.LambdaDemo",
