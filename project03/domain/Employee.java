@@ -10,6 +10,7 @@ public class Employee implements Serializable{
     private double salary;//transient ,加此关键字的属性不会被序列化，在反序列化时，读出的是对应数据类型的默认值，如int型是零
  
     public Employee() {
+        System.out.println("Employee()...");
     }
 
     public Employee(int id, String name, int age, double salary) {
@@ -17,6 +18,15 @@ public class Employee implements Serializable{
         this.name = name;
         this.age = age;
         this.salary = salary;
+    }
+
+    public Employee(int id){
+        this.id = id;
+    }
+
+    public Employee(int id, String name){
+        this.id = id;
+        this.name = name;
     }
 
     public int getId() {
