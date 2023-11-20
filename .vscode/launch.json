@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "StreamDemo",
+            "request": "launch",
+            "mainClass": "chapter18.node03.StreamDemo",
+            "projectName": "shangguigu_b7e27b35"
+        },
+        {
+            "type": "java",
             "name": "ArrayQuote",
             "request": "launch",
             "mainClass": "chapter18.node02.ArrayQuote",
