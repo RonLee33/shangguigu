@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "RecordTest",
+            "request": "launch",
+            "mainClass": "chapter18.node06.recorddemo.RecordTest",
+            "projectName": "shangguigu_b7e27b35"
+        },
+        {
+            "type": "java",
             "name": "SwitchFeature",
             "request": "launch",
             "mainClass": "chapter18.node06.SwitchFeature",
