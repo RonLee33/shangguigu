@@ -35,7 +35,7 @@ public class SwitchFeature {
     }
 
     public static void switchIn12(){
-        // JDK 12之中新增的switch表达式，新增 -> 代替:,此时不会出现原“switch”穿透的现象
+        // JDK 12之中新增的switch表达式，新增 -> 代替:,此时不会出现原“switch”穿透的现象(用“:”仍会出现击穿，此时相当于未用新特性)
         // 而且一个case中可写多种操作相同的匹配项
         // 但同一个switch不能同时写 : 和 ->
         // 另外，可以使用变量接受switch结果

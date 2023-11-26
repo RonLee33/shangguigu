@@ -51,7 +51,7 @@ public class ConstructorQuote {
         Function<Integer, Employee> f2 = (id) -> new Employee(id);
 
         /* 虽然形式上和无参构造器的引用一样，
-         * 但实际因为 【类型推断】的原因，编译器会依据unction<Integer, Employee>的
+         * 但实际因为 【类型推断】的原因，编译器会依据Function<Integer, Employee>的
          * 入参 Integer会自动匹配Employee中入参为Integer/int(自动装箱)的构造器（即，public Employee(int age)）生成对象
          */
         Function<Integer, Employee> f3 = Employee :: new;

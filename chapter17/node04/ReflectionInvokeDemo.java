@@ -10,8 +10,8 @@ import chapter17.node01.Person;
 public class ReflectionInvokeDemo {
     public static void main(String[] args) throws Exception{
         // getRefField();
-        // invokeRefMethod();
-        invokeRefConstructor();
+        invokeRefMethod();
+        // invokeRefConstructor();
     }
 
     public static void getRefField() throws Exception{
@@ -67,7 +67,6 @@ public class ReflectionInvokeDemo {
          */
         Method showNationMethod = clazz.getDeclaredMethod("showNation", String.class, int.class);
         showNationMethod.setAccessible(true);
-        showNationMethod.getReturnType().getName();
 
         // invoke()返回值与运行时类对应方法声明的返回值一样， showNation()返回String类型的，因此可强转成 String类型
         System.out.println("showNation()返回类型是：" + showNationMethod.getReturnType().getName());

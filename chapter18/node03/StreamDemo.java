@@ -2,6 +2,7 @@ package chapter18.node03;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.BiFunction;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -15,7 +16,8 @@ public class StreamDemo {
         // matchLook();
         // aggregateQuerry();
         // statute();
-        collectResult();
+        // collectResult();
+        filterMap();
     }
 
     public static void newStream(){
@@ -38,6 +40,18 @@ public class StreamDemo {
         // 方式三（非集合/数组的Stream）：通过Stream的of()方法
         Stream<String> stream4 = Stream.of("AA", "BB", "CC");
 
+    }
+
+    public static void filterMap(){
+        // 筛选
+        // 查找年龄大于34岁的所有员工
+        list.stream().filter(employee -> employee.getAge() > 34).forEach(System.out::println);
+
+        System.out.println("---------------------");
+        // 映射
+        // 打印所有的员工的年龄
+        list.stream().map(Employee::getAge).forEach(System.out::println);
+        
     }
 
     public static void matchLook(){
@@ -85,7 +99,7 @@ public class StreamDemo {
 
     public static void statute(){
         // StreamApi的终止操作
-        // 3-规约
+        // 3-归约
 
         // reduce(T identity, BinaryOperator bo) --有初始值identity的reduce(), 逻辑类似于Python中的reduce()
         // 求 1-10的整数之和
